@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #C93610;
+  --color-dark: #3A210F;
+  --color-cream: #F8EEDF;
+  --color-card: #F4DFC5;
+
+  --font-sans: Inter, sans-serif;
+  --font-display: Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-dark);
+  font-family: var(--font-sans);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 11vw, 5.25rem);
+  line-height: 1.05;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(2rem, 9vw, 4rem);
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.app-container {
+  width: min(100% - 2rem, 1280px);
+  margin-inline: auto;
+}
+
+.layout-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .app-container {
+    width: min(100% - 3rem, 1280px);
+  }
+
+  .layout-grid {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    column-gap: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .layout-grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 1.5rem;
+  }
+}
